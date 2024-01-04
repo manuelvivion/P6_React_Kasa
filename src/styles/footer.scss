@@ -1,0 +1,28 @@
+@import "breakpoint"; // import scss file to get $breakpoint variable (max-width for mobiles)
+
+footer {
+    background-color: black;
+    width: 100%;
+    height : 200px;
+    text-align: center;
+    color: white;
+    font-size: large;
+    /* position : absolute;
+    bottom : 0; */
+    img{
+        height: 45px;
+        margin-top: 60px;
+        margin-bottom: 30px;
+    }
+
+    @media (max-width: $breakpoint) { // Responsive  : mobile screen
+        p{
+            font-size: small;
+            width:33%;
+            margin: auto;
+        }
+        img{
+            margin-bottom: 15px;
+        }
+    }
+}

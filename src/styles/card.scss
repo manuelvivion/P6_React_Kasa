@@ -1,0 +1,43 @@
+@import "breakpoint"; // import scss file to get $breakpoint variable (max-width for mobiles)
+@import "scss-config"; // import primary colors
+
+.card-house{
+    
+    padding : 0px;
+    margin : 30px;
+    height : 340px;
+    width : 340px;
+    border-radius :10px;
+    position: relative;
+    cursor: pointer;
+    color : white;
+    background-image: linear-gradient(to bottom, white 70%, #333);
+
+    h3{
+        position: absolute;
+        margin :0px;
+        bottom : 20px;
+        left : 20px;
+    }
+
+    img{
+        border-radius :10px;
+        width: 100%;
+        height:100%;
+        object-fit: cover;
+        mix-blend-mode: multiply;
+        
+    }
+
+    &:hover{
+        transform: scale(0.99);
+        box-shadow: 4px 5px 5px rgba(0,0,0,0.25);
+    }
+
+    @media (max-width: $breakpoint) { 
+        width : 100%;  
+        height : 255px;  
+        margin : 10px 0px;
+    }
+
+}

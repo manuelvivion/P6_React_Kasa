@@ -1,1 +1,48 @@
-@import "./header";
+@import "breakpoint"; // import scss file to get $breakpoint variable (max-width for mobiles)
+@import "scss-config"; // import primary colors
+
+@import "header"; // import header scss file (containing all responsive style for the header)
+@import "footer"; // import footer scss file (containing all responsive style for the footer)
+@import "banner"; // import Banner scss file (containing all responsive style for the banner)
+@import "collapse"; // import Banner scss file (containing all responsive style for the banner)
+@import "card"; // import card scss file 
+
+/****** General ***********/
+* {font-family: 'Montserra', sans-serif; box-sizing: border-box;} // setting global font and border-box
+
+a {color: inherit;text-decoration: none;} //links
+
+body {background-color: #fff;margin:0;} // white bg, no margin
+
+main{
+    padding :0px 100px; // 100px gutter left and right
+    min-height : calc(100vh - 350px); //calculate full window height - (footer+header heights : 200 + 150)
+    @media (max-width: $breakpoint) { // Responsive  : mobile screen
+        padding :0px 20px; // 20px gutter left and right for mobile
+        min-height : calc(100vh - 290px); //calculate full window height - (footer+header heights : 200 + 90)
+    }
+}
+
+
+.main-container-about{
+    padding : 15px 100px;
+    @media (max-width: $breakpoint) { 
+        padding : 15px 0px;   
+    }
+}
+
+.main-container-home{
+    padding : 20px;
+    margin-top: 40px;
+    background-color: $primary-grey ;
+    border-radius: 25px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    @media (max-width: $breakpoint) { 
+        padding : 0px; 
+        background-color: transparent ; 
+        margin-top: 20px;
+    }
+}

@@ -1,4 +1,35 @@
-header{
+@import "breakpoint"; // import scss file to get $breakpoint variable (max-width for mobiles)
+@import "scss-config"; // import primary colors
+
+header{ // style of <header> created with react
     height : 150px;
-    background-color: aqua;
+    display :flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center; //vertical center
+    padding : 0px 100px; // left and right gutters
+    font-size:x-large;
+    text-align: right;
+    img{ //kasa logo
+        height:70px; // 70 px, based on maquette
+        margin : auto 0px; // 
+    }
+
+    a{
+        margin-left:30px;
+        color : $primary-red;
+    }
+    
+
+    @media (max-width: $breakpoint) { // (mobile style for header) breakpoint variable imported from external scss file
+        height : 90px;
+        padding : 0px 20px;
+        font-size:medium;
+        img{  // img logo -> smaller 
+            height:50px; //70 to 50 px
+        }
+        a{ //links
+            margin-left:20px; // closer to avoid two lines
+        }
+    }
 }
