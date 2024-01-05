@@ -1,0 +1,36 @@
+@import "breakpoint"; // import scss file to get $breakpoint variable (max-width for mobiles)
+@import "scss-config"; // import primary colors
+
+.carousel-main{
+    width:100%;
+    height: 420px;
+    position: relative;
+    .carousel-image{
+        width:100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 40px;
+    }
+    .carousel-cpt{
+        color : white;
+        font-size : large;
+        text-align: center;
+        position: absolute;
+        margin:0px;
+        bottom : 25px;
+        left:50%;
+    }
+    .previous-img,.next-img{
+        position: absolute;
+        margin:0px;
+        top : calc(50% - 44px);
+        cursor: pointer;
+    }
+    .previous-img{
+        left:20px;
+    }
+    .next-img{
+        right:20px;
+        transform: rotate(180deg);
+    }
+}

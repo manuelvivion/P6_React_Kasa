@@ -2,14 +2,17 @@
 @import "scss-config"; // import primary colors
 
 .main-container-fiche{
-
+    .fiche-top{
+        margin-bottom: 30px;
+    }
     
-    .fiche-tags-rating{
+    .fiche-tags-rating,.fiche-place-name{
         align-items: center;
+        flex-wrap: wrap;
     }
 
 
-    .fiche-collapses, .fiche-tags-rating{
+    .fiche-collapses, .fiche-tags-rating, .fiche-place-name{
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -37,6 +40,39 @@
                 color:$primary-red;
             }
           }
+        }
+
+        .place{
+            h3,h4{
+                margin:10px 0px;
+                color:$primary-red;
+            }
+            h3{
+                font-size : x-large;
+            }
+            h4{
+                font-size: large;
+            }
+        }
+
+        .host-name{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: end;
+            align-items: center;
+            p{
+                color:$primary-red;
+                text-align: right;
+                font-size: large;
+                line-height: 25px;
+                margin-right: 10px;
+                white-space: pre-line; // make the '\n' charcter work when converting array to multiple line string
+        
+            }
+            img{
+                height:65px;
+                border-radius: 50%;
+            }
         }
     }
 }

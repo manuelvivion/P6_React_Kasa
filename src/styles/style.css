@@ -177,19 +177,23 @@ footer img {
   }
 }
 
-.main-container-fiche .fiche-tags-rating {
-  align-items: center;
+.main-container-fiche .fiche-top {
+  margin-bottom: 30px;
 }
-.main-container-fiche .fiche-collapses, .main-container-fiche .fiche-tags-rating {
+.main-container-fiche .fiche-tags-rating, .main-container-fiche .fiche-place-name {
+  align-items: center;
+  flex-wrap: wrap;
+}
+.main-container-fiche .fiche-collapses, .main-container-fiche .fiche-tags-rating, .main-container-fiche .fiche-place-name {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   margin: 15px 0px;
 }
-.main-container-fiche .fiche-collapses .collapse, .main-container-fiche .fiche-tags-rating .collapse {
+.main-container-fiche .fiche-collapses .collapse, .main-container-fiche .fiche-tags-rating .collapse, .main-container-fiche .fiche-place-name .collapse {
   width: 48%;
 }
-.main-container-fiche .fiche-collapses .tags span, .main-container-fiche .fiche-tags-rating .tags span {
+.main-container-fiche .fiche-collapses .tags span, .main-container-fiche .fiche-tags-rating .tags span, .main-container-fiche .fiche-place-name .tags span {
   background-color: #FF6060;
   margin-right: 15px;
   color: white;
@@ -197,13 +201,75 @@ footer img {
   border-radius: 10px;
   font-size: small;
 }
-.main-container-fiche .fiche-collapses .rating .rate-star, .main-container-fiche .fiche-tags-rating .rating .rate-star {
+.main-container-fiche .fiche-collapses .rating .rate-star, .main-container-fiche .fiche-tags-rating .rating .rate-star, .main-container-fiche .fiche-place-name .rating .rate-star {
   color: #888;
   font-size: x-large;
   margin-left: 10px;
 }
-.main-container-fiche .fiche-collapses .rating .rate-star.star-red, .main-container-fiche .fiche-tags-rating .rating .rate-star.star-red {
+.main-container-fiche .fiche-collapses .rating .rate-star.star-red, .main-container-fiche .fiche-tags-rating .rating .rate-star.star-red, .main-container-fiche .fiche-place-name .rating .rate-star.star-red {
   color: #FF6060;
+}
+.main-container-fiche .fiche-collapses .place h3, .main-container-fiche .fiche-collapses .place h4, .main-container-fiche .fiche-tags-rating .place h3, .main-container-fiche .fiche-tags-rating .place h4, .main-container-fiche .fiche-place-name .place h3, .main-container-fiche .fiche-place-name .place h4 {
+  margin: 10px 0px;
+  color: #FF6060;
+}
+.main-container-fiche .fiche-collapses .place h3, .main-container-fiche .fiche-tags-rating .place h3, .main-container-fiche .fiche-place-name .place h3 {
+  font-size: x-large;
+}
+.main-container-fiche .fiche-collapses .place h4, .main-container-fiche .fiche-tags-rating .place h4, .main-container-fiche .fiche-place-name .place h4 {
+  font-size: large;
+}
+.main-container-fiche .fiche-collapses .host-name, .main-container-fiche .fiche-tags-rating .host-name, .main-container-fiche .fiche-place-name .host-name {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: end;
+  align-items: center;
+}
+.main-container-fiche .fiche-collapses .host-name p, .main-container-fiche .fiche-tags-rating .host-name p, .main-container-fiche .fiche-place-name .host-name p {
+  color: #FF6060;
+  text-align: right;
+  font-size: large;
+  line-height: 25px;
+  margin-right: 10px;
+  white-space: pre-line;
+}
+.main-container-fiche .fiche-collapses .host-name img, .main-container-fiche .fiche-tags-rating .host-name img, .main-container-fiche .fiche-place-name .host-name img {
+  height: 65px;
+  border-radius: 50%;
+}
+
+.carousel-main {
+  width: 100%;
+  height: 420px;
+  position: relative;
+}
+.carousel-main .carousel-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 40px;
+}
+.carousel-main .carousel-cpt {
+  color: white;
+  font-size: large;
+  text-align: center;
+  position: absolute;
+  margin: 0px;
+  bottom: 25px;
+  left: 50%;
+}
+.carousel-main .previous-img, .carousel-main .next-img {
+  position: absolute;
+  margin: 0px;
+  top: calc(50% - 44px);
+  cursor: pointer;
+}
+.carousel-main .previous-img {
+  left: 20px;
+}
+.carousel-main .next-img {
+  right: 20px;
+  transform: rotate(180deg);
 }
 
 /****** General ***********/
