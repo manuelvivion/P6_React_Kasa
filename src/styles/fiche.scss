@@ -1,0 +1,42 @@
+@import "breakpoint"; // import scss file to get $breakpoint variable (max-width for mobiles)
+@import "scss-config"; // import primary colors
+
+.main-container-fiche{
+
+    
+    .fiche-tags-rating{
+        align-items: center;
+    }
+
+
+    .fiche-collapses, .fiche-tags-rating{
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        margin :15px 0px;
+        
+
+        .collapse{
+            width: 48%;
+        }
+        .tags span{
+            background-color : $primary-red;
+            margin-right :15px;
+            color:white;
+            padding : 10px 30px;
+            border-radius: 10px;
+            font-size: small;
+        }
+        .rating{
+            .rate-star{
+                color: #888;
+                font-size: x-large;
+                margin-left : 10px;
+            
+            &.star-red{
+                color:$primary-red;
+            }
+          }
+        }
+    }
+}

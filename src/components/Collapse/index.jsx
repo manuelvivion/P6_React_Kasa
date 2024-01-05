@@ -3,6 +3,7 @@ import { useState } from 'react'
 
 import arrowRight from '../../images/arrow-right.png'; //backgroun image for the banner
 
+
 function Collapse({title,infos}) { // destructuration à la déclaration
     const [isOpen, setOpen] = useState(false)
 
@@ -12,9 +13,9 @@ function Collapse({title,infos}) { // destructuration à la déclaration
 
     return (
         <article className="collapse-bar">
-            <div className='collapse-header'>
+            <div className='collapse-header' onClick={toggleCollapse}>
             <h3>{title}</h3>
-            <img src={arrowRight} alt="arrow" onClick={toggleCollapse} className={isOpen?"arrow-down":""}/>
+            <img src={arrowRight} alt="arrow" className={isOpen?"arrow-down":""}/>
             </div>
 
             {isOpen && 

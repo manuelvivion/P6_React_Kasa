@@ -14,13 +14,14 @@
     
     .collapse-header{
         background-color: $primary-red;
-        border-radius: 5px;
+        border-radius: 10px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
         align-items: center;
         height: 50px;
         color : white;
+        cursor: pointer;
 
         
 
@@ -32,7 +33,6 @@
 
         img{
             height: 32px;
-            cursor: pointer;
             transform: rotate(-90deg);
             
         }
@@ -47,5 +47,10 @@
         background-color: $primary-grey;
         color : $primary-red;
         font-size: large;
+        text-align: justify;
+        p{
+            line-height:22px;
+            white-space: pre-line; // make the '\n' charcter work when converting array to multiple line string
+        }
     }
 }
