@@ -1,13 +1,14 @@
+// import created components :
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
 import Banner from '../../components/Banner';
 import Collapse from '../../components/Collapse';
-
+//-------
 import imgBanner from '../../images/banner-img-2.png'; //backgroun image for the banner
 
-function About() {
+function About() { // full page as component imported in router
 
-  let listRubriques =[];
+  let listRubriques =[]; //List created to fullfil 4 differents collapses component
 
   listRubriques.push({
     title : "Fiabilité",
@@ -32,7 +33,7 @@ function About() {
     return (
     
      <div>
-     <Header/>
+     <Header/>{/* use of header component */}
           <main > 
                <Banner imgSrc={imgBanner} bannerText=""/> {/* Banner with background picture and caption */}
               <div className="main-container-about"> {/* styled in 'style.scss' */}
@@ -42,7 +43,7 @@ function About() {
               </div>
           
           </main>
-     <Footer/>
+     <Footer/> {/* use of footer component */}
      </div>
     );
   }

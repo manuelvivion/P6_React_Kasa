@@ -10,13 +10,13 @@
 @import "carousel"; // import card scss file 
 
 /****** General ***********/
-* {font-family: 'Montserra', sans-serif; box-sizing: border-box;} // setting global font and border-box
+* {font-family: 'Montserrat', sans-serif; box-sizing: border-box;} // setting global font and border-box
 
 a {color: inherit;text-decoration: none;} //links
 
 body {background-color: #fff;margin:0;} // white bg, no margin
 
-main{
+main{ //balise <main> in every page/componenet
     padding :0px 100px; // 100px gutter left and right
     min-height : calc(100vh - 350px); //calculate full window height - (footer+header heights : 200 + 150)
     @media (max-width: $breakpoint) { // Responsive  : mobile screen
@@ -26,14 +26,14 @@ main{
 }
 
 
-.main-container-about{
+.main-container-about{ // <div> in main, between Header and Footer
     padding : 15px 100px;
-    @media (max-width: $breakpoint) { 
+    @media (max-width: $breakpoint) { // Responsive  : mobile screen
         padding : 15px 0px;   
     }
 }
 
-.main-container-home{
+.main-container-home{ // <div> in main, between Header and Footer
     padding : 20px;
     margin-top: 40px;
     background-color: $primary-grey ;
@@ -42,7 +42,7 @@ main{
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-    @media (max-width: $breakpoint) { 
+    @media (max-width: $breakpoint) { // Responsive  : mobile screen
         padding : 0px; 
         background-color: transparent ; 
         margin-top: 20px;

@@ -1,8 +1,10 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
 
+//import the only one global CSS file
 import './styles/style.css';
 
+// import created components (full pages) :
 import Home from './pages/Home/'
 import Fiche from './pages/Fiche/'
 import About from './pages/About/'

@@ -1,16 +1,14 @@
 import PropTypes from 'prop-types' // typing the props
 import { Link } from 'react-router-dom';
-//import { useState } from 'react'
 
-function Card({imgSrc,title,id}) { // destructuration à la déclaration
 
- 
+function Card({imgSrc,title,id}) { // destructuration à la déclaration : cover image, title of the house, id of house in database
 
     return (
-        <Link to={`/fiche/${id}`}>
-            <article className="card-house">
-                <img src={imgSrc} alt={title}/>
-                <h3>{title}</h3>
+        <Link to={`/fiche/${id}`}> {/* full card redirect to the correct fiche, thanks to /id */}
+            <article className="card-house"> {/* each card declared as html article */}
+                <img src={imgSrc} alt={title}/> {/* cover image, dark gradient manage in css (gradient in the bg of the article) */}
+                <h2>{title}</h2> {/* H2 will be displayed over the image, relative/position absolute set in CSS */}
             </article>
         </Link>
     )
@@ -19,10 +17,10 @@ function Card({imgSrc,title,id}) { // destructuration à la déclaration
 Card.propTypes = { //set the type of the props
     imgSrc: PropTypes.string,
     title: PropTypes.string, 
-    id: PropTypes.string.isRequired,
+    id: PropTypes.string.isRequired, //id mandatory
 }
 
-Card.defaultProps= { //set the type of the props
+Card.defaultProps= { //default props
     title: "Logement vacance", 
     id: "1", 
 }

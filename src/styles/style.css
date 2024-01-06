@@ -70,7 +70,7 @@ footer img {
   object-fit: cover;
   filter: brightness(75%);
 }
-.banner h2 {
+.banner h1 {
   position: absolute;
   margin: 0;
   padding: 4px;
@@ -89,7 +89,7 @@ footer img {
   .banner img {
     border-radius: 15px;
   }
-  .banner h2 {
+  .banner h1 {
     font-size: 22px;
     top: 33px;
     left: 15px;
@@ -118,7 +118,7 @@ footer img {
   color: white;
   cursor: pointer;
 }
-.collapse-bar .collapse-header h3 {
+.collapse-bar .collapse-header h2 {
   margin: 0px;
   font-size: 24px;
   font-weight: 500;
@@ -152,11 +152,14 @@ footer img {
   color: white;
   background-image: linear-gradient(to bottom, white 70%, #333);
 }
-.card-house h3 {
+.card-house h2 {
   position: absolute;
   margin: 0px;
   bottom: 20px;
   left: 20px;
+  font-size: medium;
+  font-weight: 300;
+  width: 90%;
 }
 .card-house img {
   border-radius: 10px;
@@ -209,14 +212,14 @@ footer img {
 .main-container-fiche .fiche-collapses .rating .rate-star.star-red, .main-container-fiche .fiche-tags-rating .rating .rate-star.star-red, .main-container-fiche .fiche-place-name .rating .rate-star.star-red {
   color: #FF6060;
 }
-.main-container-fiche .fiche-collapses .place h3, .main-container-fiche .fiche-collapses .place h4, .main-container-fiche .fiche-tags-rating .place h3, .main-container-fiche .fiche-tags-rating .place h4, .main-container-fiche .fiche-place-name .place h3, .main-container-fiche .fiche-place-name .place h4 {
+.main-container-fiche .fiche-collapses .place h2, .main-container-fiche .fiche-collapses .place h3, .main-container-fiche .fiche-tags-rating .place h2, .main-container-fiche .fiche-tags-rating .place h3, .main-container-fiche .fiche-place-name .place h2, .main-container-fiche .fiche-place-name .place h3 {
   margin: 10px 0px;
   color: #FF6060;
 }
-.main-container-fiche .fiche-collapses .place h3, .main-container-fiche .fiche-tags-rating .place h3, .main-container-fiche .fiche-place-name .place h3 {
+.main-container-fiche .fiche-collapses .place h2, .main-container-fiche .fiche-tags-rating .place h2, .main-container-fiche .fiche-place-name .place h2 {
   font-size: x-large;
 }
-.main-container-fiche .fiche-collapses .place h4, .main-container-fiche .fiche-tags-rating .place h4, .main-container-fiche .fiche-place-name .place h4 {
+.main-container-fiche .fiche-collapses .place h3, .main-container-fiche .fiche-tags-rating .place h3, .main-container-fiche .fiche-place-name .place h3 {
   font-size: large;
 }
 .main-container-fiche .fiche-collapses .host-name, .main-container-fiche .fiche-tags-rating .host-name, .main-container-fiche .fiche-place-name .host-name {
@@ -274,7 +277,7 @@ footer img {
 
 /****** General ***********/
 * {
-  font-family: "Montserra", sans-serif;
+  font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
 

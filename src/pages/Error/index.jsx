@@ -1,12 +1,13 @@
+// import created components :
 import Header from '../../components/Header';
 import Footer from '../../components/Footer';
-
-function Error() {
+//--------
+function Error() { // full page as component imported in router
     return (
      <div>
-     <Header/>
+     <Header/> {/* use of header component */}
      404 - page introuvable
-     <Footer/>
+     <Footer/> {/* use of footer component */}
      </div>
     );
   }

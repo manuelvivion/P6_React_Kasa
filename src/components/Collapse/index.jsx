@@ -1,24 +1,24 @@
 import PropTypes from 'prop-types' // typing the props
-import { useState } from 'react'
+import { useState } from 'react' //use state
 
-import arrowRight from '../../images/arrow-right.png'; //backgroun image for the banner
+import arrowRight from '../../images/arrow-right.png'; //white arrow
 
 
-function Collapse({title,infos}) { // destructuration à la déclaration
-    const [isOpen, setOpen] = useState(false)
+function Collapse({title,infos}) { // destructuration à la déclaration : props: title (on the red header), infos (text or list, shown or hidden )
+    const [isOpen, setOpen] = useState(false) //boolean to set if collapse component is open or not
 
-    const toggleCollapse = ()=>{
-        setOpen(!isOpen);
+    const toggleCollapse = ()=>{ //toggle collapse
+        setOpen(!isOpen); //change current state, component is rerender (true becomes false, false becomes true)
     }
 
     return (
-        <article className="collapse-bar">
-            <div className='collapse-header' onClick={toggleCollapse}>
-            <h3>{title}</h3>
-            <img src={arrowRight} alt="arrow" className={isOpen?"arrow-down":""}/>
+        <article className="collapse-bar"> {/* collapse component rendered as article (header+infos) */}
+            <div className='collapse-header' onClick={toggleCollapse}> {/* toggle and rerender when click on full red header */}
+            <h2>{title}</h2>
+            <img src={arrowRight} alt="arrow" className={isOpen?"arrow-down":""}/> {/* depending on state, class is switched to set arrow to the correct direction (set in CSS) */}
             </div>
 
-            {isOpen && 
+            {isOpen && //render only if open state is true
                 <div className='collapse-infos'>
                 <p>{infos}</p>
                 </div>
@@ -32,7 +32,7 @@ Collapse.propTypes = { //set the type of the props
     infos: PropTypes.string,
 }
 
-Collapse.defaultProps= { //set the type of the props
+Collapse.defaultProps= { //set props default
     title: "Title", 
     infos: "Informations", 
 }
