@@ -15,7 +15,7 @@ function Header() {
             <nav>
                 <Link to="/">Accueil</Link> {/* link = <a> */}
                 <Link to="/about">A Propos</Link>
-                <Link to="/">Favoris {count>0?<span className="count-badge">{count}</span>:null}</Link> {/* link = <a> */}
+                <Link to="/favoris">Favoris {count>0?<span className="count-badge">{count}</span>:null}</Link> {/* link = <a> */}
             </nav>
         </header>
     )

@@ -7,5 +7,6 @@ export const getLike = (id) => (state) => getFavoriteList(state).filter((house) 
 
 export const getFavoriteQty = (state) => getFavoriteList(state).filter((house) => house.like === true).length
 
+export const getFavoritesOnly = (state) => getFavoriteList(state).filter((house) => house.like === true)
 
 

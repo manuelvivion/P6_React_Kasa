@@ -333,6 +333,9 @@ main {
   padding: 0px 100px;
   min-height: calc(100vh - 350px);
 }
+main .favoris-titre {
+  text-align: center;
+}
 @media (max-width: 400px) {
   main {
     padding: 0px 20px;

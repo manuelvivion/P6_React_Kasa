@@ -20,6 +20,11 @@ body {background-color: #fff;margin:0;} // white bg, no margin
 main{ //balise <main> in every page/componenet
     padding :0px 100px; // 100px gutter left and right
     min-height : calc(100vh - 350px); //calculate full window height - (footer+header heights : 200 + 150)
+    
+    .favoris-titre{
+        text-align: center;
+    }
+    
     @media (max-width: $breakpoint) { // Responsive  : mobile screen
         padding :0px 20px; // 20px gutter left and right for mobile
         min-height : calc(100vh - 290px); //calculate full window height - (footer+header heights : 200 + 90)
@@ -43,6 +48,7 @@ main{ //balise <main> in every page/componenet
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
+   
     @media (max-width: $breakpoint) { // Responsive  : mobile screen
         padding : 0px; 
         background-color: transparent ; 

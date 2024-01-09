@@ -11,6 +11,7 @@ import Home from './pages/Home/'
 import Fiche from './pages/Fiche/'
 import About from './pages/About/'
 import Error from './pages/Error/'
+import Favoris from './pages/Favoris/'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/favoris" element={<Favoris />} />
         <Route path="/about" element={<About />} />
         <Route path="/fiche/:idLogement" element={<Fiche />} />
         <Route path="*" element={<Error />} /> 
