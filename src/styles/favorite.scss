@@ -1,0 +1,28 @@
+@import "breakpoint"; // import scss file to get $breakpoint variable (max-width for mobiles)
+@import "scss-config"; // import primary colors
+
+.card-favorite{
+    position: absolute;
+    top:0px;
+    right:0px;
+    font-size: large;
+    margin:8px;
+    height:35px;
+    width:35px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.15);
+    .like-icon{
+        height:20px;
+        margin: 7px;
+        cursor: pointer;
+    }
+
+}
+
+.span-favorite{
+    margin-left: 15px;
+    .like-icon{
+        height:20px;
+        cursor: pointer;
+    }
+}

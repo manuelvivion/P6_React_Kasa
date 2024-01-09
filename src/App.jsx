@@ -1,5 +1,7 @@
 import React from 'react'
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom'
+import { Provider } from 'react-redux'
+import { store } from './store/store.js';
 
 //import the only one global CSS file
 import './styles/style.css';
@@ -14,6 +16,7 @@ import Error from './pages/Error/'
 function App() {
   return (
     <React.StrictMode>
+    <Provider store={store}>
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
@@ -22,6 +25,7 @@ function App() {
         <Route path="*" element={<Error />} /> 
       </Routes>
     </Router>
+    </Provider>
   </React.StrictMode>
   );
 }

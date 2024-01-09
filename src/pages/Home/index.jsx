@@ -8,6 +8,8 @@ import Card from '../../components/Card';
 //Import React Hooks
 import { useEffect, useState } from 'react'
 
+
+
 import imgBanner from '../../images/banner-img-1.png'; //backgroun image for the banner
 
 //import Datas from Json file :  list of houses
@@ -24,6 +26,8 @@ function Home() { // full page as component imported in router
       setHousesList(listJson)
    }, [])
   
+
+
    
 
     return (
@@ -32,14 +36,17 @@ function Home() { // full page as component imported in router
             <main> 
                <Banner imgSrc={imgBanner} bannerText={bannerText}/> {/* Banner with background picture and caption */}
                <div className="main-container-home">
-               {housesList.map((house) => ( //for every house of the database
+               {housesList.map(function(house){ //for every house of the database
+                 // console.log(list.filter((spot) => spot.id === house.id)[0].like)
+                  return(
                   <Card //we create a clickable card
                      key={house.id}
                      imgSrc={house.cover}
                      title={house.title}
                      id={house.id} // with props
                   />
-               ))}
+                  )
+               })}
 
                </div>
             </main>

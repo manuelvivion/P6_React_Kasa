@@ -18,6 +18,19 @@ header{ // style of <header> created with react
     a{
         margin-left:30px;
         color : $primary-red;
+        position: relative;
+        .count-badge{
+            position: absolute;
+            font-size: medium;
+            height:20px;
+            width:20px;
+            text-align: center;
+            top:0px;
+            right:-12px;
+            color:white;
+            background-color: $primary-red;
+            border-radius: 50%;
+        }
     }
     
 

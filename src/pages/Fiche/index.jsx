@@ -5,6 +5,7 @@ import Collapse from '../../components/Collapse';
 import TagList from '../../components/TagList';
 import Rating from '../../components/Rating';
 import Carousel from '../../components/Carousel';
+import Favorite from '../../components/Favorite';
 //----------
 
 //import React hooks
@@ -13,6 +14,11 @@ import { useParams } from 'react-router-dom' //useParams to get the id transmitt
 
 //import datas from JSOn file : list of houses
 import listJson from '../../data/logements.json';
+
+//import Redux helpers
+import { useSelector, useDispatch } from "react-redux";
+import { getLike,getFavoriteList } from "../../selectors";
+import { favoriteSlice } from "../../components/Favorite/favoriteSlice.js";
 
 function Fiche() { // full page as component imported in router
 
@@ -42,6 +48,15 @@ function Fiche() { // full page as component imported in router
     return nomPrenom;
    }
 
+   //Redux state for favorite management
+   const dispatch = useDispatch();
+    
+    const liked = useSelector(getLike(idLogement))
+
+    const handleFavorite = (event) =>{
+        dispatch(favoriteSlice.actions.toggleFavorite(idLogement));
+    }
+
     return (
      <div> 
       <Header/> {/* use of header component */}
@@ -56,7 +71,11 @@ function Fiche() { // full page as component imported in router
                 <div className="fiche-bottom"> {/* fiche bottom shows all other informations ,including 2 collpases component */}
                       <div className="fiche-place-name"> {/* Place infos on the left, name+portrait on the right */}
                           <div className="place">
-                            <h2>{house.title}</h2>
+                            <h2>{house.title}
+                            <span className="span-favorite" onClick={handleFavorite}>
+                               <Favorite like={liked} />
+                           </span>
+                            </h2>
                             <h3>{house.location}</h3>
                           </div>
                           <div className="host-name">
