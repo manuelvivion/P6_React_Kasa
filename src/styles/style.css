@@ -17,6 +17,9 @@ header a {
   color: black;
   text-transform: uppercase;
 }
+header .active-link {
+  text-decoration: underline;
+}
 @media (max-width: 400px) {
   header {
     height: 90px;

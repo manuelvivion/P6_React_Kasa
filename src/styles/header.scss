@@ -20,6 +20,9 @@ header{ // style of <header> created with react
         color : black;
         text-transform: uppercase;
     }
+    .active-link{
+        text-decoration: underline;
+    }
     
 
     @media (max-width: $breakpoint) { // (mobile style for header) breakpoint variable imported from external scss file
