@@ -8,24 +8,26 @@ import Carousel from '../../components/Carousel';
 //----------
 
 //import React hooks
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 import { useParams, useNavigate } from 'react-router-dom' //useParams to get the id transmitted in the url
 
 //import datas from JSOn file : list of houses
 import listJson from '../../data/logements.json';
 
 function Fiche() { // full page as component imported in router
-
-  const [housesList, setHousesList] = useState([]); //array of all houses
-  const [selectedHouse, setSelectedHouse] = useState([]); //array with only 1 element : the current house (id in url)
+  const navigate = useNavigate(); // route to page 404 if incorect house id
   const { idLogement } = useParams(); //id of the selected house, in url (as string)
-  /* const navigate = useNavigate(); //needed to go to 404 if incorect fiche id */
+  let selectedHouse = [];
+  selectedHouse = listJson.filter((house) => (house.id === idLogement));
 
-  useEffect(() => { //on load
-    setHousesList(listJson);
-    setSelectedHouse(housesList.filter((house) => (house.id === idLogement))); //filter the array with the selected house id
+  //console.log(selectedHouse.length);
+  useEffect(() => { //on load, detect incorrect house id -> go to page 404
+    if (selectedHouse.length === 0) {
+      navigate("/incorrect-houseid"); // force route to page 404
+    }
+  })//
 
-  }, [idLogement, housesList])// re render on change of url parameter and array
+
 
 
 
@@ -55,39 +57,39 @@ function Fiche() { // full page as component imported in router
             </div> {/* end of fiche top */}
 
             <div className="fiche-bottom"> {/* fiche bottom shows all other informations ,including 2 collpases component */}
-              <div className="fiche-place-name"> {/* Place infos on the left, name+portrait on the right */}
+              <div className="fiche-place-tags"> {/* Place infos on the left, name+portrait on the right */}
                 <div className="place">
                   <h2>{house.title}</h2>
                   <h3>{house.location}</h3>
                 </div>
-                <div className="host-name host-name-desktop">
-                  <img src={house.host.picture} alt={house.title} />
-                  <p>{makeTwoLines(house.host.name)}</p>
-                </div>
-              </div>
-
-              <div className="fiche-tags-rating"> {/* list of tags on the left, Rating stars on the right */}
                 <div className="tags">
                   <TagList tags={house.tags} />
                 </div>
-                <div className="rating">
-                  <Rating rate={+house.rating} /> {/* "+" added to convert string to number */}
-                  <div className="host-name host-name-mobile">
-                    <img src={house.host.picture} alt={house.title} />
-                    <p>{makeTwoLines(house.host.name)}</p>
-                  </div>
-                </div>
+
               </div>
 
-              <div className="fiche-collapses">
-                <div className="collapse"> {/* Additionnal div is necessary to add a classname and manage CSS (collapse element already have his own css) */}
-                  <Collapse title="Description" infos={house.description} />
+              <div className="fiche-name-rating"> {/* list of tags on the left, Rating stars on the right */}
+                <div className="host-name">
+                  <img src={house.host.picture} alt={house.title} />
+                  <p>{makeTwoLines(house.host.name)}</p>
                 </div>
-                <div className="collapse">
-                  <Collapse title="Equipements" infos={makeList(house.equipments)} />
+
+                <div className="rating">
+                  <Rating rate={+house.rating} /> {/* "+" added to convert string to number */}
                 </div>
               </div>
             </div> {/* end of fiche bottom */}
+
+
+            <div className="fiche-collapses">
+              <div className="collapse"> {/* Additionnal div is necessary to add a classname and manage CSS (collapse element already have his own css) */}
+                <Collapse title="Description" infos={house.description} page="fiche" />
+              </div>
+              <div className="collapse">
+                <Collapse title="Equipements" infos={makeList(house.equipments)} page="fiche" />
+              </div>
+            </div>
+
 
 
 

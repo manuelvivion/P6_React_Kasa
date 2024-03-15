@@ -4,7 +4,7 @@
 .collapse-bar{
 
     width :100%;
-    margin : 15px 0px;
+    margin : 5px 0px;
     position: relative;
     height: auto;
 
@@ -34,7 +34,7 @@
     
     .collapse-header{
         background-color: $primary-red;
-        border-radius: 5px;
+        border-radius: 10px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -48,7 +48,7 @@
 
         h2{
             margin:0px;
-            font-size: 24px;
+            font-size: 18px;
             font-weight: 500;
         }
 
@@ -67,6 +67,14 @@
         }
 
         
+    }
+
+    
+    .header-about{ //custom class for collapses in 'about' page
+        border-radius: 5px;
+        h2{
+            font-size: 24px;
+        }
     }
 
     .collapse-infos{
@@ -106,6 +114,7 @@
         
         .collapse-header{
             height:30px;
+            border-radius: 5px;
             h2{
                 font-size: 14px;
             }
@@ -113,10 +122,12 @@
                 height: 20px;
             }
         }
+
+        
         .collapse-infos{
             p{
-                line-height:20px;
-                font-size:14px;
+                line-height:18px;
+                font-size:12px;
             }
             
         }

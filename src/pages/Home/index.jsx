@@ -30,7 +30,7 @@ function Home() { // full page as component imported in router
       <div>
          <Header /> {/* use of header component */}
          <main>
-            <Banner imgSrc={imgBanner} bannerText={bannerText} /> {/* Banner with background picture and caption */}
+            <Banner imgSrc={imgBanner} bannerText={bannerText} darken={true} /> {/* Banner with background picture and caption */}
             <div className="main-container-home">
                {housesList.map((house) => ( //for every house of the database
                   <Card //we create a clickable card

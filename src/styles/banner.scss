@@ -11,7 +11,13 @@
         height:100%;
         border-radius: 30px;
         object-fit: cover;
-        filter: brightness(60%);
+        filter: brightness(75%);
+    }
+
+    &-dark{
+        img{
+            filter: brightness(35%);
+        }
     }
 
     h1{

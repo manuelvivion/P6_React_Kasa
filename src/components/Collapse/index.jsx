@@ -4,7 +4,7 @@ import { useState } from 'react' //use state
 import arrowRight from '../../images/arrow-right.png'; //white arrow
 
 
-function Collapse({ title, infos }) { // destructuration à la déclaration : props: title (on the red header), infos (text or list, shown or hidden )
+function Collapse({ title, infos, page }) { // destructuration à la déclaration : props: title (on the red header), infos (text or list, shown or hidden )
     const [isOpen, setOpen] = useState(false) //boolean to set if collapse component is open or not
 
     const toggleCollapse = () => { //toggle collapse
@@ -13,7 +13,7 @@ function Collapse({ title, infos }) { // destructuration à la déclaration : pr
 
     return (
         <article className="collapse-bar"> {/* collapse component rendered as article (header+infos) */}
-            <div className='collapse-header' onClick={toggleCollapse}> {/* toggle and rerender when click on full red header */}
+            <div className={page === "fiche" ? 'collapse-header header-fiche' : 'collapse-header header-about'} onClick={toggleCollapse}> {/* toggle and rerender when click on full red header */}
                 <h2>{title}</h2>
                 <img src={arrowRight} alt="arrow" className={isOpen ? "arrow-down" : "arrow-up"} /> {/* depending on state, class is switched to set arrow to the correct direction (set in CSS) */}
             </div>

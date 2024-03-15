@@ -18,7 +18,6 @@ header{ // style of <header> created with react
     a{
         margin-left:30px;
         color : black;
-        text-transform: uppercase;
     }
     .active-link{
         text-decoration: underline;
@@ -35,6 +34,7 @@ header{ // style of <header> created with react
         a{ //links
             margin-left:20px; // closer to avoid two lines
             font-size: 12px;
+            text-transform: uppercase;
         }
     }
 }
