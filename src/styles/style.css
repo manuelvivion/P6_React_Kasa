@@ -14,7 +14,8 @@ header img {
 }
 header a {
   margin-left: 30px;
-  color: #FF6060;
+  color: black;
+  text-transform: uppercase;
 }
 @media (max-width: 400px) {
   header {
@@ -27,6 +28,7 @@ header a {
   }
   header a {
     margin-left: 20px;
+    font-size: 12px;
   }
 }
 
@@ -68,7 +70,7 @@ footer img {
   height: 100%;
   border-radius: 30px;
   object-fit: cover;
-  filter: brightness(75%);
+  filter: brightness(60%);
 }
 .banner h1 {
   position: absolute;
@@ -94,7 +96,8 @@ footer img {
     top: 33px;
     left: 15px;
     padding: auto;
-    width: 60%;
+    width: 90%;
+    white-space: pre-line;
     text-align: left;
   }
 }
@@ -102,14 +105,31 @@ footer img {
 .collapse-bar {
   width: 100%;
   margin: 15px 0px;
+  position: relative;
+  height: auto;
 }
 .collapse-bar div {
   margin: 0px;
   padding: 5px 15px;
 }
+.collapse-bar .collapse-content {
+  position: relative;
+  z-index: -5;
+  top: -10px;
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 0.4s ease-in-out;
+  overflow: hidden;
+}
+.collapse-bar .collapse-content-show {
+  grid-template-rows: 1fr;
+}
+.collapse-bar .collapse-content-hide {
+  grid-template-rows: 0fr;
+}
 .collapse-bar .collapse-header {
   background-color: #FF6060;
-  border-radius: 10px;
+  border-radius: 5px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -117,6 +137,7 @@ footer img {
   height: 50px;
   color: white;
   cursor: pointer;
+  z-index: 100;
 }
 .collapse-bar .collapse-header h2 {
   margin: 0px;
@@ -128,17 +149,52 @@ footer img {
   transform: rotate(-90deg);
 }
 .collapse-bar .collapse-header .arrow-down {
-  transform: rotate(-270deg);
+  transition: transform 400ms ease-in-out;
+  transform: rotate(90deg);
+}
+.collapse-bar .collapse-header .arrow-up {
+  transition: transform 400ms ease-in-out;
+  transform: rotate(-90deg);
 }
 .collapse-bar .collapse-infos {
   background-color: #F6F6F6;
   color: #FF6060;
   font-size: large;
   text-align: justify;
+  position: relative;
+  padding-top: 10px;
+  overflow: hidden;
 }
 .collapse-bar .collapse-infos p {
   line-height: 22px;
   white-space: pre-line;
+  color: black;
+}
+.collapse-bar .p-show {
+  transition: all 400ms ease-in-out;
+  transform: translateY(0%);
+}
+.collapse-bar .p-hide {
+  transition: all 400ms ease-in-out;
+  transform: translateY(-150%);
+}
+@media (max-width: 400px) {
+  .collapse-bar {
+    margin: 1px 0px;
+  }
+  .collapse-bar .collapse-header {
+    height: 30px;
+  }
+  .collapse-bar .collapse-header h2 {
+    font-size: 14px;
+  }
+  .collapse-bar .collapse-header img {
+    height: 20px;
+  }
+  .collapse-bar .collapse-infos p {
+    line-height: 20px;
+    font-size: 14px;
+  }
 }
 
 .card-house {
@@ -221,6 +277,7 @@ footer img {
 }
 .main-container-fiche .fiche-collapses .place h3, .main-container-fiche .fiche-tags-rating .place h3, .main-container-fiche .fiche-place-name .place h3 {
   font-size: large;
+  color: black;
 }
 .main-container-fiche .fiche-collapses .host-name, .main-container-fiche .fiche-tags-rating .host-name, .main-container-fiche .fiche-place-name .host-name {
   display: flex;
@@ -239,6 +296,66 @@ footer img {
 .main-container-fiche .fiche-collapses .host-name img, .main-container-fiche .fiche-tags-rating .host-name img, .main-container-fiche .fiche-place-name .host-name img {
   height: 65px;
   border-radius: 50%;
+}
+.main-container-fiche .fiche-collapses .host-name-desktop, .main-container-fiche .fiche-tags-rating .host-name-desktop, .main-container-fiche .fiche-place-name .host-name-desktop {
+  display: flex;
+}
+.main-container-fiche .fiche-collapses .host-name-mobile, .main-container-fiche .fiche-tags-rating .host-name-mobile, .main-container-fiche .fiche-place-name .host-name-mobile {
+  display: none;
+}
+@media (max-width: 400px) {
+  .main-container-fiche .fiche-place-name, .main-container-fiche .fiche-tags-rating {
+    margin: 0;
+  }
+  .main-container-fiche .fiche-place-name .place h2, .main-container-fiche .fiche-tags-rating .place h2 {
+    font-size: 18px;
+    font-weight: 500;
+  }
+  .main-container-fiche .fiche-place-name .place h3, .main-container-fiche .fiche-tags-rating .place h3 {
+    font-size: 14px;
+    font-weight: 300;
+  }
+  .main-container-fiche .fiche-place-name .host-name-desktop, .main-container-fiche .fiche-tags-rating .host-name-desktop {
+    display: none;
+  }
+  .main-container-fiche .fiche-place-name .host-name-mobile, .main-container-fiche .fiche-tags-rating .host-name-mobile {
+    display: flex;
+  }
+  .main-container-fiche .fiche-tags-rating {
+    flex-direction: column;
+    align-items: start;
+  }
+  .main-container-fiche .fiche-tags-rating .rating {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+  .main-container-fiche .fiche-tags-rating .rating .rate-star {
+    font-size: medium;
+    margin-left: 5px;
+  }
+  .main-container-fiche .fiche-tags-rating .tags span {
+    margin-right: 5px;
+    padding: 3px 20px;
+    border-radius: 5px;
+    font-size: x-small;
+  }
+  .main-container-fiche .fiche-tags-rating .host-name p {
+    font-size: 12px;
+    line-height: 16px;
+  }
+  .main-container-fiche .fiche-tags-rating .host-name img {
+    height: 32px;
+  }
+  .main-container-fiche .fiche-collapses {
+    flex-direction: column;
+    margin: 3px 0px;
+  }
+  .main-container-fiche .fiche-collapses .collapse {
+    width: 100%;
+  }
 }
 
 .carousel-main {
@@ -273,6 +390,67 @@ footer img {
 .carousel-main .next-img {
   right: 20px;
   transform: rotate(180deg);
+}
+@media (max-width: 400px) {
+  .carousel-main {
+    height: 255px;
+  }
+  .carousel-main .carousel-image {
+    border-radius: 10px;
+  }
+  .carousel-main .carousel-cpt {
+    bottom: 5px;
+  }
+  .carousel-main .previous-img, .carousel-main .next-img {
+    height: 24px;
+    top: calc(50% - 12px);
+  }
+  .carousel-main .previous-img {
+    left: 10px;
+  }
+  .carousel-main .next-img {
+    right: 10px;
+  }
+}
+
+.error-main {
+  text-align: center;
+}
+.error-main h2, .error-main h3 {
+  color: #FF6060;
+}
+.error-main h2 {
+  font-size: 288px;
+  line-height: 410px;
+  margin: 40px 0px;
+}
+.error-main h3 {
+  font-size: 36px;
+  line-height: 51px;
+  font-weight: 500;
+}
+.error-main-link {
+  font-size: 18px;
+  text-decoration: underline;
+  font-weight: 500;
+  margin: 120px 0px;
+}
+@media (max-width: 400px) {
+  .error-main h2 {
+    font-size: 96px;
+    line-height: 142px;
+    margin: 80px 0px;
+  }
+  .error-main h3 {
+    width: 260px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 200;
+  }
+  .error-main-link {
+    font-size: 14px;
+  }
 }
 
 /****** General ***********/

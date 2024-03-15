@@ -11,7 +11,7 @@
         height:100%;
         border-radius: 30px;
         object-fit: cover;
-        filter: brightness(75%);
+        filter: brightness(60%);
     }
 
     h1{
@@ -37,7 +37,8 @@
             top : 33px; // top calculated for 2 lines
             left:15px;
             padding: auto;
-            width: 60%;
+            width: 90%;
+            white-space: pre-line;
             text-align: left;
             
         }

@@ -17,7 +17,8 @@ header{ // style of <header> created with react
 
     a{
         margin-left:30px;
-        color : $primary-red;
+        color : black;
+        text-transform: uppercase;
     }
     
 
@@ -30,6 +31,7 @@ header{ // style of <header> created with react
         }
         a{ //links
             margin-left:20px; // closer to avoid two lines
+            font-size: 12px;
         }
     }
 }

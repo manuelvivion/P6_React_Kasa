@@ -5,16 +5,36 @@
 
     width :100%;
     margin : 15px 0px;
+    position: relative;
+    height: auto;
 
     div{
         margin:0px;
-
         padding : 5px 15px;
+    }
+
+    .collapse-content{
+
+        position:relative;
+        z-index: -5;
+        top:-10px;
+        display: grid;
+        grid-template-rows: 0fr;
+        transition: grid-template-rows 0.4s ease-in-out;
+        overflow: hidden;
+
+        &-show{
+            grid-template-rows: 1fr;
+        }
+        &-hide{
+            grid-template-rows: 0fr;
+        }
+
     }
     
     .collapse-header{
         background-color: $primary-red;
-        border-radius: 10px;
+        border-radius: 5px;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -22,6 +42,7 @@
         height: 50px;
         color : white;
         cursor: pointer;
+        z-index:100;
 
         
 
@@ -37,7 +58,12 @@
             
         }
         .arrow-down{
-            transform: rotate(-270deg);
+            transition: transform 400ms ease-in-out;
+            transform: rotate(90deg);
+        }
+        .arrow-up{
+            transition: transform 400ms ease-in-out;
+            transform: rotate(-90deg);
         }
 
         
@@ -48,9 +74,52 @@
         color : $primary-red;
         font-size: large;
         text-align: justify;
+        position: relative;
+        padding-top:10px;
+        overflow: hidden;
+        
+        
         p{
             line-height:22px;
             white-space: pre-line; // make the '\n' charcter work when converting array to multiple line string
+            color: black;
+        }
+        
+
+        
+    }
+    .p-show{
+        
+        transition: all 400ms ease-in-out;
+        transform: translateY(0%);
+       
+        
+    }
+    .p-hide{
+     transition: all 400ms ease-in-out;
+     transform: translateY(-150%);
+    }
+
+    @media (max-width: $breakpoint) { // Responsive  : mobile screen
+        
+        margin : 1px 0px;
+        
+        .collapse-header{
+            height:30px;
+            h2{
+                font-size: 14px;
+            }
+            img{
+                height: 20px;
+            }
+        }
+        .collapse-infos{
+            p{
+                line-height:20px;
+                font-size:14px;
+            }
+            
         }
     }
+    
 }

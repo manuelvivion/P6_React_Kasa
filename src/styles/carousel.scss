@@ -33,4 +33,24 @@
         right:20px;
         transform: rotate(180deg);
     }
+
+    @media (max-width: $breakpoint) { // (mobile style for header) breakpoint variable imported from external scss file
+        height: 255px;
+        .carousel-image{
+            border-radius: 10px;
+        }
+        .carousel-cpt{
+            bottom : 5px;
+        }
+        .previous-img,.next-img{
+            height:24px;
+            top : calc(50% - 12px);
+        }
+        .previous-img{
+            left:10px;
+        }
+        .next-img{
+            right:10px;
+        }
+    }
 }
